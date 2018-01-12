@@ -1,0 +1,86 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$juneum-primary: mat-palette($mat-indigo);
+$juneum-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$juneum-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$juneum-theme: mat-light-theme($juneum-primary, $juneum-accent, $juneum-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($juneum-theme);
+
+$vivid: #80CFD8;
+$light: #CFEBEC;
+$neutral: #62869E;
+$dark: #081D3E;
+
+$config: mat-typography-config();
+
+body {
+  // background: $juneum-primary;
+  background: $vivid;
+  margin: 0;
+  // font-family: 'Roboto', sans-serif;
+
+  @include mat-typography-level-to-styles($config, body-1);
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  &.header-container {
+    height: 200px;
+    padding: 10px 75px 0 0;
+  }
+}
+.name {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.header-text {
+  text-align: right;
+  font-size: 18px;
+}
+.title {
+  color: $vivid;
+}
+.address {
+  color: $light;
+  font-size: 15px;
+  line-height: 24px;
+  &>a {
+    color: $light;
+    text-decoration: none;
+  }
+  &>a:visited {
+    color: $light;
+  }
+  &>a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+}
+.divider {
+  color: $neutral;
+}
+.header-container {
+  background-color: $dark;
+  color: white;
+}
+.fill-remaining {
+  flex: 1 1 auto;
+}
