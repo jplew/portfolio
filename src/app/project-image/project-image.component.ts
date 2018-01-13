@@ -12,10 +12,11 @@ export class ProjectImageComponent implements OnInit {
   @Output() change = new EventEmitter()
 
   @Input() imageUrl: string
-  @Input() imageId: string
+  @Input() projectName: string
+  @Input() imageId: number
+  @Input() quantity: number
 
   _bigImageUrl: string
-  _imageWidth: number
   _imageHeight: number
 
   animal: string
@@ -36,38 +37,21 @@ export class ProjectImageComponent implements OnInit {
   getConfig() {
     const config = {
       data: {
+        imageId: this.imageId,
+        projectName: this.projectName,
         bigImageUrl: this.getBigImageUrl(),
-        imageHeight: window.innerHeight - 300 + 'px',
+        imageHeight: window.innerHeight - 220 + 'px',
+        quantity: this.quantity
       },
-      width: this.getWidth(this._bigImageUrl) + 'px',
-      height: window.innerHeight - 200 + 'px',
+      height: window.innerHeight - 80 + 'px',
     }
-    console.log(config.width)
     return config
   }
 
-  getWidth(url) {
-    const imgObject = new Image();
-    imgObject.src = url;
-
-    const natWidth = imgObject.addEventListener('load', function() {
-      const width = this.naturalWidth;
-      const natHeight = this.naturalHeight;
-      return width
-    })
-
-    return natWidth
-  }
-
-  openDialog(event): void {
-    this.change.emit({ id: 'howdy' })
-    console.log(event)
-
+  openDialog(): void {
     const dialogRef = this.dialog.open(ImageDialogComponent, this.getConfig())
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed')
-      this.animal = result
     })
   }
 
@@ -81,17 +65,40 @@ export class ImageDialogComponent {
 
   imageUrl: string
   imageHeight: string
+  imageId: number
+  projectName: string
+  quantity: number
 
   constructor(
     public dialogRef: MatDialogRef<ImageDialogComponent>,
+    public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.imageUrl = this.data.bigImageUrl
     this.imageHeight = this.data.imageHeight
-
+    this.imageId = this.data.imageId
+    this.projectName = this.data.projectName
+    this.quantity = this.data.quantity
   }
 
-  onNoClick(): void {
-    this.dialogRef.close()
+  imagePrevious() {
+    this.imageId--
+    if (this.imageId <= 0) {
+      this.imageId = this.quantity
+    }
+    this.imageUrl = '/assets/images/' + this.projectName + '-0' + this.imageId + '.png'
+    console.log(this.imageUrl)
   }
+
+  imageNext() {
+    this.imageId++
+    if (this.imageId >= this.quantity) {
+      this.imageId = 1
+    }
+    // const newImageId = +this.imageId + 1
+    this.imageUrl = '/assets/images/' + this.projectName + '-0' + this.imageId + '.png'
+    console.log(this.imageUrl)
+    // this.dialogRef.updateSize('500px', '500px')
+  }
+
 }

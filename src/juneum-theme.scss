@@ -134,3 +134,26 @@ body {
     }
 }
 
+.icon-hover {
+  cursor: pointer;
+  color: #999;
+  &:hover {
+    color: #ccc;
+  }
+}
+.icon-arrow-left {
+  padding-right: 10px;
+}
+.icon-arrow-right {
+  padding-left: 10px;
+}
+
+.cdk-overlay-container .mat-dialog-container {
+  padding: 10px 10px 24px;
+  .content {
+    margin-top: -10px;
+    .caption {
+      margin-bottom: 10px;
+    }
+  }
+}

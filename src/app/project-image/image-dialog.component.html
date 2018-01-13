@@ -1,9 +1,45 @@
-<p>It's Jazz!</p>
+<div fxLayout="row">
+  <span class="fill-remaining"></span>
+  <span fxFlexAlign="start">
+    <a class="icon-hover" (click)="dialogRef.close()"><mat-icon >close</mat-icon></a>
+  </span>
+</div>
 
-<img [src]="imageUrl" [style.height]="imageHeight" alt="projectName">
-<!-- <mat-form-field>
-  <input matInput placeholder="How much?" #howMuch>
-</mat-form-field> -->
+<div class="image" fxLayout="row">
 
-<!-- <p> {{ data.message }} </p> -->
-<!-- <button type="button" (click)="dialogRef.close(howMuch.value)">Close dialog</button> -->
+  <span fxFlexAlign="center">
+    <a class="icon-hover" (click)="imagePrevious()"><mat-icon class="icon-arrow-left">keyboard_arrow_left</mat-icon></a>
+  </span>
+
+  <span fxFlexAlign="center">
+
+    <div class="content">
+      <div fxFlexAlign="start" class="caption mat-caption">
+        It's Jazz!
+      </div>
+
+      <div>
+        <img #bigImage [src]="imageUrl" [style.height]="imageHeight" alt="projectName">
+      </div>
+
+      <div>
+
+        <a class="icon-hover" (click)="imagePrevious()">
+          <mat-icon class="icon-arrow-left">keyboard_arrow_left</mat-icon>
+        </a>
+
+        <a class="icon-hover" (click)="imageNext()">
+          <mat-icon class="icon-arrow-right">keyboard_arrow_right</mat-icon>
+        </a>
+
+      </div>
+
+    </div>
+
+  </span>
+  
+  <span fxFlexAlign="center">
+    <a class="icon-hover" (click)="imageNext()"><mat-icon class="icon-arrow-right">keyboard_arrow_right</mat-icon></a>
+  </span>
+
+</div>

@@ -3,7 +3,9 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material'
 
 interface ProjectImage {
   url: string,
-  id: string
+  id: number,
+  project: string,
+  qty: number
 }
 
 @Component({
@@ -36,7 +38,9 @@ export class ProjectComponent implements OnInit {
     for (let i = 1; i <= qty; i++) {
       const imageObject = <ProjectImage>{};
       imageObject.url = '/assets/images/' + name + '-0' + i + '-tn.png'
-      imageObject.id = '0' + i
+      imageObject.id = i
+      imageObject.project = this.projectName
+      imageObject.qty = this.qty
       imagesArray.push(imageObject)
     }
 

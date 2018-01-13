@@ -13,9 +13,13 @@
       </mat-chip-list>
 
       <div class="thumbnails">
-
-        <app-project-image *ngFor="let image of images" [imageUrl]="image.url" [imageId]="image.id" ></app-project-image>
-        
+        <app-project-image 
+          *ngFor="let image of images" 
+          [imageUrl]="image.url" 
+          [imageId]="image.id" 
+          [quantity]="image.qty" 
+          [projectName]="image.project">
+        </app-project-image>
       </div>
 
     </div>
