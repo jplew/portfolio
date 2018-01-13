@@ -1,86 +1,136 @@
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
-
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
-
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $juneum-primary: mat-palette($mat-indigo);
 $juneum-accent:  mat-palette($mat-pink, A200, A100, A400);
-
 // The warn palette is optional (defaults to red).
 $juneum-warn:    mat-palette($mat-red);
-
 // Create the theme object (a Sass map containing all of the palettes).
 $juneum-theme: mat-light-theme($juneum-primary, $juneum-accent, $juneum-warn);
-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($juneum-theme);
-
 $vivid: #80CFD8;
 $light: #CFEBEC;
 $neutral: #62869E;
 $dark: #081D3E;
-
+$lightgrey: #c9d7e0;
 $config: mat-typography-config();
-
+$paddingWidth: 75px;
 body {
-  // background: $juneum-primary;
-  background: $vivid;
-  margin: 0;
-  // font-family: 'Roboto', sans-serif;
-
-  @include mat-typography-level-to-styles($config, body-1);
+    // background: $juneum-primary;
+    background: $vivid;
+    margin: 0; // font-family: 'Roboto', sans-serif;
+    @include mat-typography-level-to-styles($config, body-1);
 }
 
-.mat-toolbar-row, .mat-toolbar-single-row {
-  &.header-container {
-    height: 200px;
-    padding: 10px 75px 0 0;
-  }
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    &.header-container {
+        height: 200px;
+        padding: 10px $paddingWidth 0 0;
+    }
 }
+
 .name {
-  font-size: 40px;
-  font-weight: 900;
-  margin-bottom: 5px;
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 5px;
 }
-.header-text {
-  text-align: right;
-  font-size: 18px;
-}
-.title {
-  color: $vivid;
-}
-.address {
-  color: $light;
-  font-size: 15px;
-  line-height: 24px;
-  &>a {
-    color: $light;
-    text-decoration: none;
-  }
-  &>a:visited {
-    color: $light;
-  }
-  &>a:hover {
-    color: white;
-    text-decoration: underline;
-  }
 
+.header-text {
+    text-align: right;
+    font-size: 18px;
 }
+
+.title {
+    color: $vivid;
+}
+
+.address {
+    color: $light;
+    font-size: 15px;
+    line-height: 24px;
+    a {
+        color: $light;
+        text-decoration: none;
+        &:visited {
+            color: $light;
+        }
+        &:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+}
+
 .divider {
-  color: $neutral;
+    color: $neutral;
 }
+
 .header-container {
-  background-color: $dark;
-  color: white;
+    background-color: $dark;
+    color: white;
 }
+
 .fill-remaining {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
+
+.project-container {
+    margin-top: 40px;
+    background: white;
+    border-radius: 0 20px 20px 0;
+    padding: 20px 25px 20px 0;
+    width: 66%;
+    .col-two {
+        margin-top: 30px;
+        padding-right: 15px;
+    }
+    hr {
+        margin-left: -20px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid $dark;
+    }
+    .content {
+        padding-left: $paddingWidth;
+        h2 {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: $dark;
+        }
+    }
+    .thumbnails {
+        margin-top: 20px;
+        .filtered {
+            margin: 0 10px 10px 0;
+            display: inline-block;
+            & img {
+                border-radius: 20px 0;
+                filter: brightness(85%) sepia(0.7) saturate(25%);
+            }
+            &:hover img {
+                -webkit-animation: filter-animation 0.3s 1 forwards; // -webkit-animation-iteration-count: 2;
+                // filter: none;
+            }
+            @-webkit-keyframes filter-animation {
+                100% {
+                    -webkit-filter: none;
+                }
+            }
+        }
+    }
+    .mat-chip:not(.mat-basic-chip), .mat-chip:not(.mat-basic-chip)+.mat-chip:not(.mat-basic-chip) {
+        background: $lightgrey;
+        border-radius: 8px 0;
+        margin: 0 8px 8px 0;
+    }
+}
+
