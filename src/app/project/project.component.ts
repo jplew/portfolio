@@ -11,45 +11,44 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ProjectComponent implements OnInit {
 
-  projects: Project[]
+  project: Project
 
-  @Input() projectName: string
-  @Input() qty: number
-
-  @Output() change = new EventEmitter()
-
-  animal: string
-
-  images: Array<ProjectImage>
+  @Input() projectData: Project
 
   constructor(
     private projectService: ProjectService
   ) { }
 
   ngOnInit() {
-    this.projectService.getProjects()
-      .subscribe( projects => {
-        this.projects = projects
-        console.log(this.projects)
-      })
 
-    this.images = this.buildImagesObj(this.projectName, this.qty)
+    // this.projectService.getProject(1)
+    //   .subscribe( project => {
+    //     this.project = project
+    //     console.log(this.project)
+    //   })
+
+    // this.images = this.projectData.images
+    // this.data = this.projectData
+    // this.slug = this.projectData.slug
+    // this.title = this.projectData.title
+
+    // this.images = this.buildImagesObj(this.projectName, this.qty)
   }
 
-  buildImagesObj(name: string, qty: number): ProjectImage[] {
+  // buildImagesObj(name: string, qty: number): ProjectImage[] {
 
-    const imagesArray = []
+  //   const imagesArray = []
 
-    for (let i = 1; i <= qty; i++) {
-      const imageObject = <ProjectImage>{};
-      imageObject.url = '/assets/images/' + name + '-0' + i + '-tn.png'
-      imageObject.id = i
-      imageObject.project = this.projectName
-      imageObject.qty = this.qty
-      imagesArray.push(imageObject)
-    }
+  //   for (let i = 1; i <= qty; i++) {
+  //     const imageObject = <ProjectImage>{};
+  //     imageObject.url = '/assets/images/' + name + '-0' + i + '-tn.png'
+  //     imageObject.id = i
+  //     imageObject.project = this.projectName
+  //     imageObject.qty = this.qty
+  //     imagesArray.push(imageObject)
+  //   }
 
-    return imagesArray
-  }
+  //   return imagesArray
+  // }
 
 }

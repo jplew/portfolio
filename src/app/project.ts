@@ -1,11 +1,14 @@
 export class Project {
   id: number;
-  name: string;
+  slug: string;
+  title: string;
+  skills: string[];
+  images: ProjectImage[];
+  blurb: string;
+  bullets: string[];
 }
 
 export interface ProjectImage {
-  url: string,
   id: number,
-  project: string,
-  qty: number
+  caption: string
 }

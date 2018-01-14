@@ -1,6 +1,8 @@
 <app-header></app-header>
 
-<app-project [projectName]="'intellitrucks'" [qty]="5">
+<app-project 
+  *ngFor="let project of projects" 
+  [projectData]="project">
 </app-project>
 
 <!-- <app-project [projectName]="'superghost'" [qty]="5">

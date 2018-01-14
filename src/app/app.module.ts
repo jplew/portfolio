@@ -9,7 +9,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ProjectComponent} from './project/project.component';
-import { ProjectImageComponent, ImageDialogComponent  } from './project-image/project-image.component'
+import { ProjectImageComponent, } from './project-image/project-image.component'
+
+import { ImageDialogComponent } from './image-dialog/image-dialog.component'
 
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { ProjectService } from './services/project.service';

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
+import { ProjectImage } from '../project';
+import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
 
 @Component({
   selector: 'app-project-image',
@@ -9,7 +11,7 @@ import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 export class ProjectImageComponent implements OnInit {
 
-  @Output() change = new EventEmitter()
+  @Input() imageData: ProjectImage
 
   @Input() imageUrl: string
   @Input() projectName: string
@@ -53,49 +55,6 @@ export class ProjectImageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
     })
-  }
-
-}
-
-@Component({
-  selector: 'app-image-dialog',
-  templateUrl: 'image-dialog.component.html',
-})
-export class ImageDialogComponent {
-
-  imageUrl: string
-  imageHeight: string
-  imageId: number
-  projectName: string
-  quantity: number
-
-  constructor(
-    public dialogRef: MatDialogRef<ImageDialogComponent>,
-    public dialog: MatDialog,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
-    this.imageUrl = this.data.bigImageUrl
-    this.imageHeight = this.data.imageHeight
-    this.imageId = this.data.imageId
-    this.projectName = this.data.projectName
-    this.quantity = this.data.quantity
-  }
-
-  imagePrevious() {
-    this.imageId--
-    if (this.imageId <= 0) {
-      this.imageId = this.quantity
-    }
-    this.imageUrl = '/assets/images/' + this.projectName + '-0' + this.imageId + '.png'
-  }
-
-  imageNext() {
-    this.imageId++
-    if (this.imageId >= this.quantity) {
-      this.imageId = 1
-    }
-    this.imageUrl = '/assets/images/' + this.projectName + '-0' + this.imageId + '.png'
-    // this.dialogRef.updateSize('500px', '500px')
   }
 
 }

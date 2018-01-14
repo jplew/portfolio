@@ -4,40 +4,25 @@
 
     <div class="col-one" fxFlex="50" fxFlex.xs="50">
 
-      <h2>Intellitrucks.com</h2>
+      <h2>{{ projectData.title }}</h2>
       <mat-chip-list>
-        <mat-chip>PHP</mat-chip>
-        <mat-chip>Laravel</mat-chip>
-        <mat-chip>MySQL</mat-chip>
-        <mat-chip>Javascript</mat-chip>
+        <mat-chip *ngFor="let skill of projectData.skills">{{ skill }}</mat-chip>
       </mat-chip-list>
 
       <div class="thumbnails">
         <app-project-image 
-          *ngFor="let image of images" 
-          [imageUrl]="image.url" 
-          [imageId]="image.id" 
-          [quantity]="image.qty" 
-          [projectName]="image.project">
+          *ngFor="let image of projectData.images" 
+          [imageData]="image">
         </app-project-image>
       </div>
 
     </div>
 
     <div class="col-two" fxFlex="50" fxFlex.xs="50">
-
-      Web app for logistics technology company.
+      {{ projectData.description }}
       <ul>
-        <li>Developed set of specs based on US Department of Transportation federal motor carrier regulations on Electronic Logging
-          Devices
-        </li>
-        <li>Custom CMS development in Laravel</li>
-        <li>MySQL database design</li>
-        <li>Programmed REST API endpoints</li>
-        <li>Created charts and tables using Datatables.net and amcharts.js</li>
-        <li>Connected to Google Maps APIs</li>
+        <li *ngFor="let bullet of projectData.bullets">{{ bullet }}</li>
       </ul>
-
     </div>
 
   </div>
