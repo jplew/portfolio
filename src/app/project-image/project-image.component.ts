@@ -87,7 +87,6 @@ export class ImageDialogComponent {
       this.imageId = this.quantity
     }
     this.imageUrl = '/assets/images/' + this.projectName + '-0' + this.imageId + '.png'
-    console.log(this.imageUrl)
   }
 
   imageNext() {
@@ -95,9 +94,7 @@ export class ImageDialogComponent {
     if (this.imageId >= this.quantity) {
       this.imageId = 1
     }
-    // const newImageId = +this.imageId + 1
     this.imageUrl = '/assets/images/' + this.projectName + '-0' + this.imageId + '.png'
-    console.log(this.imageUrl)
     // this.dialogRef.updateSize('500px', '500px')
   }
 
