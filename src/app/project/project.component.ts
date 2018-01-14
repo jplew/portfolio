@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material'
 import { ProjectService } from '../services/project.service';
-import { Project, ProjectImage } from '../project'
+import { Axis, Project, ProjectImage } from '../typings'
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -12,43 +12,37 @@ import { Observable } from 'rxjs/Observable';
 export class ProjectComponent implements OnInit {
 
   project: Project
+  alignment: Axis
 
   @Input() projectData: Project
 
   constructor(
     private projectService: ProjectService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
 
-    // this.projectService.getProject(1)
-    //   .subscribe( project => {
-    //     this.project = project
-    //     console.log(this.project)
-    //   })
+    if (this.projectData.direction === 'right') {
+      this.alignment = Axis.End
+    } else {
+      this.alignment = Axis.Start
+    }
 
-    // this.images = this.projectData.images
-    // this.data = this.projectData
-    // this.slug = this.projectData.slug
-    // this.title = this.projectData.title
+    this.projectData.images = this.projectData.images.map( (image) => {
+      const ext = '.png'
+      const filename = '/assets/images/' + this.projectData.slug + '-0' + image.id
 
-    // this.images = this.buildImagesObj(this.projectName, this.qty)
+      const smallUrl =  filename + '-tn' + ext
+      const bigUrl = filename + ext
+
+      return {
+        id: image.id,
+        caption: image.caption,
+        smallUrl: smallUrl,
+        bigUrl: bigUrl
+      }
+    })
   }
-
-  // buildImagesObj(name: string, qty: number): ProjectImage[] {
-
-  //   const imagesArray = []
-
-  //   for (let i = 1; i <= qty; i++) {
-  //     const imageObject = <ProjectImage>{};
-  //     imageObject.url = '/assets/images/' + name + '-0' + i + '-tn.png'
-  //     imageObject.id = i
-  //     imageObject.project = this.projectName
-  //     imageObject.qty = this.qty
-  //     imagesArray.push(imageObject)
-  //   }
-
-  //   return imagesArray
-  // }
 
 }

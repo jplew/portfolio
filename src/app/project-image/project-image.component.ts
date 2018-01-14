@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
-import { ProjectImage } from '../project';
+import { ProjectImage, Project } from '../typings';
 import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
 
 @Component({
@@ -12,16 +12,10 @@ import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
 export class ProjectImageComponent implements OnInit {
 
   @Input() imageData: ProjectImage
+  @Input() projectData: Project
 
-  @Input() imageUrl: string
-  @Input() projectName: string
-  @Input() imageId: number
-  @Input() quantity: number
-
-  _bigImageUrl: string
-  _imageHeight: number
-
-  animal: string
+  imageUrl: string
+  imageCaption: string
 
   constructor(
     public dialog: MatDialog
@@ -29,21 +23,16 @@ export class ProjectImageComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  getBigImageUrl(): string {
-    this._bigImageUrl = this.imageUrl.slice(0, -7) + '.png'
-    return this._bigImageUrl
+    this.imageUrl = this.imageData.smallUrl
+    this.imageCaption = this.imageData.caption
   }
 
   getConfig() {
     const config = {
       data: {
-        imageId: this.imageId,
-        projectName: this.projectName,
-        bigImageUrl: this.getBigImageUrl(),
+        imageData: this.imageData,
+        projectData: this.projectData,
         imageHeight: window.innerHeight - 220 + 'px',
-        quantity: this.quantity
       },
       height: window.innerHeight - 80 + 'px',
     }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ProjectService } from './services/project.service';
-import { Project } from './project';
+import { Project } from './typings';
 
 @Component({
   selector: 'app-root',

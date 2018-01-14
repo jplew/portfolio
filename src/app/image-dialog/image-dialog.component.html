@@ -15,21 +15,23 @@
 
     <div class="content">
       <div fxFlexAlign="start" class="caption mat-caption">
-        It's Jazz!
+        {{ caption }}
       </div>
 
       <div>
         <img #bigImage [src]="imageUrl" [style.height]="imageHeight" alt="projectName">
       </div>
 
-      <div>
+      <div fxLayout="row" fxLayoutAlign="start center">
 
         <a class="icon-hover" (click)="imagePrevious()">
-          <mat-icon class="icon-arrow-left">keyboard_arrow_left</mat-icon>
+          <mat-icon class="icon-arrow-left current">keyboard_arrow_left</mat-icon>
         </a>
-
+        <span class="image-current" fxFlexAlign="start">
+          {{ imagesCurrent }} of {{ imagesTotal }}
+        </span>
         <a class="icon-hover" (click)="imageNext()">
-          <mat-icon class="icon-arrow-right">keyboard_arrow_right</mat-icon>
+          <mat-icon class="icon-arrow-right current">keyboard_arrow_right</mat-icon>
         </a>
 
       </div>

@@ -1,29 +1,34 @@
-<div class="project-container">
-  <hr>
-  <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+<div class="row" fxLayout="row" fxLayoutAlign="{{ alignment }} center">
 
-    <div class="col-one" fxFlex="50" fxFlex.xs="50">
+  <div class="project-container {{ projectData.direction }}">
+    <!-- <hr> -->
+    <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
 
-      <h2>{{ projectData.title }}</h2>
-      <mat-chip-list>
-        <mat-chip *ngFor="let skill of projectData.skills">{{ skill }}</mat-chip>
-      </mat-chip-list>
+      <div class="col-one" fxFlex="50" fxFlex.xs="50">
 
-      <div class="thumbnails">
-        <app-project-image 
-          *ngFor="let image of projectData.images" 
-          [imageData]="image">
-        </app-project-image>
+        <h2>{{ projectData.title }}</h2>
+        <mat-chip-list>
+          <mat-chip *ngFor="let skill of projectData.skills">{{ skill }}</mat-chip>
+        </mat-chip-list>
+
+        <div class="thumbnails">
+          <app-project-image 
+            *ngFor="let image of projectData.images" 
+            [projectData]="projectData" 
+            [imageData]="image">
+          </app-project-image>
+        </div>
+
+      </div>
+
+      <div class="col-two" fxFlex="45" fxFlex.xs="50">
+        {{ projectData.blurb }}
+        <ul>
+          <li *ngFor="let bullet of projectData.bullets">{{ bullet }}</li>
+        </ul>
       </div>
 
     </div>
+</div>
 
-    <div class="col-two" fxFlex="50" fxFlex.xs="50">
-      {{ projectData.description }}
-      <ul>
-        <li *ngFor="let bullet of projectData.bullets">{{ bullet }}</li>
-      </ul>
-    </div>
-
-  </div>
 </div>

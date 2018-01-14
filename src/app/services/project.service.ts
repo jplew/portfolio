@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs/Observable'
 import { catchError, map, tap } from 'rxjs/operators'
-import { Project } from '../project'
+import { Project } from '../typings'
 
 @Injectable()
 export class ProjectService {

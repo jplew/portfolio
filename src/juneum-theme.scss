@@ -22,12 +22,14 @@ $light: #CFEBEC;
 $neutral: #62869E;
 $dark: #081D3E;
 $lightgrey: #c9d7e0;
+$mediumgrey: #999;
 $config: mat-typography-config();
 $paddingWidth: 75px;
 body {
     // background: $juneum-primary;
     background: $vivid;
-    margin: 0; // font-family: 'Roboto', sans-serif;
+    margin: 0 0 50px 0;
+    padding-bottom: 50px;
     @include mat-typography-level-to-styles($config, body-1);
 }
 
@@ -36,6 +38,9 @@ body {
     &.header-container {
         height: 200px;
         padding: 10px $paddingWidth 0 0;
+        background-color: $dark;
+        color: white;
+        margin-bottom: 40px;
     }
 }
 
@@ -75,21 +80,27 @@ body {
     color: $neutral;
 }
 
-.header-container {
-    background-color: $dark;
-    color: white;
-}
-
 .fill-remaining {
     flex: 1 1 auto;
 }
 
 .project-container {
-    margin-top: 40px;
+    margin: 20px 0 20px 0;
     background: white;
     border-radius: 0 20px 20px 0;
     padding: 20px 25px 20px 0;
     width: 66%;
+    &.right {
+      border-radius: 20px 0 0 20px;
+      hr {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid $dark;
+      }
+      .content {
+        padding-left: 40px;
+      }
+    }
     .col-two {
         margin-top: 30px;
         padding-right: 15px;
@@ -143,9 +154,15 @@ body {
 }
 .icon-arrow-left {
   padding-right: 10px;
+  &.current {
+    padding-right: 5px;
+  }
 }
 .icon-arrow-right {
   padding-left: 10px;
+  &.current {
+    padding-left: 5px;
+  }
 }
 
 .cdk-overlay-container .mat-dialog-container {
@@ -156,4 +173,8 @@ body {
       margin-bottom: 10px;
     }
   }
+}
+.image-current {
+  font-size: 12px;
+  color: $mediumgrey;
 }
