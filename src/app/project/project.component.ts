@@ -23,7 +23,7 @@ export class ProjectComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.projectData.direction === 'right') {
+    if (this.projectData.id % 2 === 0) {
       this.alignment = Axis.End
     } else {
       this.alignment = Axis.Start

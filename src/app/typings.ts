@@ -3,16 +3,11 @@ export enum Axis {
   End = 'end'
 }
 
-export enum Direction {
-  Left = 'left',
-  Right = 'right'
-}
-
 export class Project {
   id: number;
-  direction?: Direction = Direction.Left;
   slug: string;
   title: string;
+  url: string;
   skills: string[];
   images: ProjectImage[];
   blurb: string;

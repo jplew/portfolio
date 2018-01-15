@@ -8,9 +8,9 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $juneum-primary: mat-palette($mat-indigo);
-$juneum-accent:  mat-palette($mat-pink, A200, A100, A400);
+$juneum-accent: mat-palette($mat-pink, A200, A100, A400);
 // The warn palette is optional (defaults to red).
-$juneum-warn:    mat-palette($mat-red);
+$juneum-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $juneum-theme: mat-light-theme($juneum-primary, $juneum-accent, $juneum-warn);
 // Include theme styles for core and each component used in your app.
@@ -26,123 +26,207 @@ $mediumgrey: #999;
 $config: mat-typography-config();
 $paddingWidth: 75px;
 body {
-    // background: $juneum-primary;
-    background: $vivid;
-    margin: 0 0 50px 0;
-    padding-bottom: 50px;
-    @include mat-typography-level-to-styles($config, body-1);
+  // background: $juneum-primary;
+  background: $vivid;
+  margin: 0 0 50px 0;
+  padding-bottom: 50px;
+  @include mat-typography-level-to-styles($config, body-1);
+  color: $dark;
 }
 
 .mat-toolbar-row,
 .mat-toolbar-single-row {
-    &.header-container {
-        height: 200px;
-        padding: 10px $paddingWidth 0 0;
-        background-color: $dark;
-        color: white;
-        margin-bottom: 40px;
-    }
+  &.header-container {
+    height: 200px;
+    padding: 10px $paddingWidth 0 0;
+    background-color: $dark;
+    color: white;
+    margin-bottom: 40px;
+  }
 }
 
 .name {
-    font-size: 40px;
-    font-weight: 900;
-    margin-bottom: 5px;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 5px;
 }
 
 .header-text {
-    text-align: right;
-    font-size: 18px;
+  text-align: right;
+  font-size: 18px;
 }
 
 .title {
-    color: $vivid;
+  color: $vivid;
 }
 
 .address {
+  color: $light;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  a {
     color: $light;
-    font-size: 15px;
-    line-height: 24px;
-    a {
-        color: $light;
-        text-decoration: none;
-        &:visited {
-            color: $light;
-        }
-        &:hover {
-            color: white;
-            text-decoration: underline;
-        }
+    text-decoration: none;
+    &:visited {
+      color: $light;
     }
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}
+.social {
+  margin-top: 5px;
+  .icon {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    // padding: 0 5px;
+    cursor: pointer;
+    &.instagram {
+      background: url('/assets/icons/ig-off.png') no-repeat;
+      &:hover {
+        background: url('/assets/icons/ig-on.png') no-repeat;
+      }
+    }
+    &.github {
+      background: url('/assets/icons/github-off.png') no-repeat;
+      &:hover {
+        background: url('/assets/icons/github-on.png') no-repeat;
+      }
+    }
+    &.stackoverflow {
+      background: url('/assets/icons/stack-off.png') no-repeat;
+      &:hover {
+        background: url('/assets/icons/stack-on.png') no-repeat;
+      }
+    }
+  }
 }
 
 .divider {
-    color: $neutral;
+  color: $neutral;
+  padding: 0 3px;
 }
 
 .fill-remaining {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .project-container {
-    margin: 20px 0 20px 0;
-    background: white;
-    border-radius: 0 20px 20px 0;
-    padding: 20px 25px 20px 0;
-    width: 66%;
-    &.right {
-      border-radius: 20px 0 0 20px;
-      hr {
-        margin-left: 20px;
-        margin-bottom: 10px;
-        border-bottom: 2px solid $dark;
-      }
-      .content {
-        padding-left: 40px;
-      }
-    }
-    .col-two {
-        margin-top: 30px;
-        padding-right: 15px;
-    }
+  margin: 20px 0 20px 0;
+  background: white;
+  border-radius: 0 20px 20px 0;
+  padding: 20px 25px 20px 0;
+  width: 66%;
+  &.end {
+    border-radius: 20px 0 0 20px;
     hr {
-        margin-left: -20px;
-        margin-bottom: 10px;
-        border-bottom: 2px solid $dark;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid $dark;
     }
     .content {
-        padding-left: $paddingWidth;
-        h2 {
-            font-weight: 500;
-            margin-bottom: 5px;
-            color: $dark;
+      padding-left: 40px;
+    }
+  }
+  .col-two {
+    margin-top: 30px;
+    padding-right: 15px;
+  }
+  hr {
+    margin-left: -20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid $dark;
+  }
+  .content {
+    padding-left: $paddingWidth;
+    h2 {
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: $dark;
+    }
+    .link {
+      margin: -10px 0 15px 0;
+      font-weight: 300;
+      a {
+        color: $neutral;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
         }
+      }
     }
-    .thumbnails {
-        margin-top: 20px;
-        .filtered {
-            margin: 0 10px 10px 0;
-            display: inline-block;
-            & img {
-                border-radius: 20px 0;
-                filter: brightness(85%) sepia(0.7) saturate(25%);
-            }
-            &:hover img {
-                -webkit-animation: filter-animation 0.3s 1 forwards; // -webkit-animation-iteration-count: 2;
-                // filter: none;
-            }
-            @-webkit-keyframes filter-animation {
-                100% {
-                    -webkit-filter: none;
-                }
-            }
+    .muted {
+      color: $neutral;
+      font-weight: 300;
+    }
+  }
+  .thumbnails {
+    margin-top: 20px;
+    .filtered {
+      position: relative;
+      margin: 0 10px 10px 0;
+      display: inline-block;
+      img {
+        border-radius: 20px 0; // filter: brightness(100%) saturate(100%);
+        // filter: brightness(85%) sepia(0.7) saturate(25%);
+        display: block;
+      }
+      &:hover img {
+        // -webkit-animation: filter-animation 0.3s 1 forwards; // -webkit-animation-iteration-count: 2;
+        // filter: none;
+      }
+      @-webkit-keyframes filter-animation {
+        100% {
+          -webkit-filter: sepia(1) brightness(0.8) saturate(0.4) hue-rotate(140deg);
         }
+      }
+      .overlay {
+        position: absolute;
+        border-radius: 20px 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: $vivid;
+      }
+      .text {
+        color: white;
+        font-size: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        .mat-icon {
+          height: 36px;
+          width: 36px;
+        }
+        .material-icons {
+          font-size: 36px;
+        }
+        opacity: 1;
+      }
+      &:hover .overlay {
+        cursor: pointer;
+        opacity: 0.6;
+      }
     }
-    .mat-chip:not(.mat-basic-chip), .mat-chip:not(.mat-basic-chip)+.mat-chip:not(.mat-basic-chip) {
-        background: $lightgrey;
-        border-radius: 8px 0;
-        margin: 0 8px 8px 0;
-    }
+  }
+  .mat-chip:not(.mat-basic-chip),
+  .mat-chip:not(.mat-basic-chip)+.mat-chip:not(.mat-basic-chip) {
+    background: $lightgrey;
+    border-radius: 8px 0;
+    margin: 0 8px 8px 0;
+  }
 }
 
 .icon-hover {
@@ -152,12 +236,14 @@ body {
     color: #ccc;
   }
 }
+
 .icon-arrow-left {
   padding-right: 10px;
   &.current {
     padding-right: 5px;
   }
 }
+
 .icon-arrow-right {
   padding-left: 10px;
   &.current {
@@ -174,7 +260,37 @@ body {
     }
   }
 }
+
 .image-current {
   font-size: 12px;
   color: $mediumgrey;
+}
+
+@media only screen and (max-width: 959px) {
+  .project-container {
+    width: 80%;
+    .content {
+      padding-left: 50px;
+    }
+  }
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    &.header-container {
+      padding-right: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .project-container {
+    .content {
+      padding-left: 40px;
+    }
+  }
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    &.header-container {
+      padding-right: 40px;
+    }
+  }
 }

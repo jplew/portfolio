@@ -1,21 +1,18 @@
 <div class="row" fxLayout="row" fxLayoutAlign="{{ alignment }} center">
 
-  <div class="project-container {{ projectData.direction }}">
+  <div class="project-container {{ alignment }}">
     <!-- <hr> -->
-    <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+    <div class="content" fxLayout="column" fxLayout.lg="row" fxFlexFill>
 
-      <div class="col-one" fxFlex="50" fxFlex.xs="50">
-
+      <div class="col-one" fxFlex="55" fxFlex.xs="50">
         <h2>{{ projectData.title }}</h2>
+        <div class="link mat-body-2" [innerHTML]="projectData.url"></div>
         <mat-chip-list>
           <mat-chip *ngFor="let skill of projectData.skills">{{ skill }}</mat-chip>
         </mat-chip-list>
 
         <div class="thumbnails">
-          <app-project-image 
-            *ngFor="let image of projectData.images" 
-            [projectData]="projectData" 
-            [imageData]="image">
+          <app-project-image *ngFor="let image of projectData.images" [projectData]="projectData" [imageData]="image">
           </app-project-image>
         </div>
 
@@ -29,6 +26,6 @@
       </div>
 
     </div>
-</div>
+  </div>
 
 </div>

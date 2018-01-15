@@ -32,7 +32,7 @@ export class ProjectImageComponent implements OnInit {
       data: {
         imageData: this.imageData,
         projectData: this.projectData,
-        imageHeight: window.innerHeight - 220 + 'px',
+        imageHeight: window.innerHeight - 250 + 'px',
       },
       height: window.innerHeight - 80 + 'px',
     }

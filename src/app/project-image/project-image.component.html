@@ -1,3 +1,9 @@
+<!-- <span class="filtered"> -->
 <span class="filtered">
-  <img (click)="openDialog($event)" [src]="imageUrl" alt="{{ imageCaption }}">
+  <img (click)="openDialog()" [src]="imageUrl" alt="{{ imageCaption }}">
+  <div class="overlay" (click)="openDialog()">
+    <div class="text">
+      <mat-icon class="">zoom_in</mat-icon>
+    </div>
+  </div>
 </span>
