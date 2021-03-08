@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -17,10 +17,10 @@ $juneum-theme: mat-light-theme($juneum-primary, $juneum-accent, $juneum-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($juneum-theme);
-$vivid: #80CFD8;
-$light: #CFEBEC;
-$neutral: #62869E;
-$dark: #081D3E;
+$vivid: #80cfd8;
+$light: #cfebec;
+$neutral: #62869e;
+$dark: #081d3e;
 $lightgrey: #c9d7e0;
 $mediumgrey: #999;
 $config: mat-typography-config();
@@ -86,21 +86,27 @@ body {
     // padding: 0 5px;
     cursor: pointer;
     &.instagram {
-      background: url('/assets/icons/ig-off.png') no-repeat;
+      background: url("https://jplew.github.io/resume/assets/icons/ig-off.png")
+        no-repeat;
       &:hover {
-        background: url('/assets/icons/ig-on.png') no-repeat;
+        background: url("https://jplew.github.io/resume/assets/icons/ig-on.png")
+          no-repeat;
       }
     }
     &.github {
-      background: url('/assets/icons/github-off.png') no-repeat;
+      background: url("https://jplew.github.io/resume/assets/icons/github-off.png")
+        no-repeat;
       &:hover {
-        background: url('/assets/icons/github-on.png') no-repeat;
+        background: url("https://jplew.github.io/resume/assets/icons/github-on.png")
+          no-repeat;
       }
     }
     &.stackoverflow {
-      background: url('/assets/icons/stack-off.png') no-repeat;
+      background: url("https://jplew.github.io/resume/assets/icons/stack-off.png")
+        no-repeat;
       &:hover {
-        background: url('/assets/icons/stack-on.png') no-repeat;
+        background: url("https://jplew.github.io/resume/assets/icons/stack-on.png")
+          no-repeat;
       }
     }
   }
@@ -181,7 +187,8 @@ body {
       }
       @-webkit-keyframes filter-animation {
         100% {
-          -webkit-filter: sepia(1) brightness(0.8) saturate(0.4) hue-rotate(140deg);
+          -webkit-filter: sepia(1) brightness(0.8) saturate(0.4)
+            hue-rotate(140deg);
         }
       }
       .overlay {
@@ -194,7 +201,7 @@ body {
         height: 100%;
         width: 100%;
         opacity: 0;
-        transition: .5s ease;
+        transition: 0.5s ease;
         background-color: $vivid;
       }
       .text {
@@ -222,7 +229,7 @@ body {
     }
   }
   .mat-chip:not(.mat-basic-chip),
-  .mat-chip:not(.mat-basic-chip)+.mat-chip:not(.mat-basic-chip) {
+  .mat-chip:not(.mat-basic-chip) + .mat-chip:not(.mat-basic-chip) {
     background: $lightgrey;
     border-radius: 8px 0;
     margin: 0 8px 8px 0;
