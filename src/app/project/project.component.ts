@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProjectService } from '../services/project.service';
+import { environment } from '../../environments/environment';
+
 import { Axis, Project } from '../typings';
 
 @Component({
@@ -13,8 +14,6 @@ export class ProjectComponent implements OnInit {
 
   @Input() projectData: Project;
 
-  constructor(private projectService: ProjectService) {}
-
   ngOnInit() {
     if (this.projectData.id % 2 === 0) {
       this.alignment = Axis.End;
@@ -22,10 +21,14 @@ export class ProjectComponent implements OnInit {
       this.alignment = Axis.Start;
     }
 
+    const prefix = environment.production
+      ? 'https://jplew.github.io/resume'
+      : '';
+
     this.projectData.images = this.projectData.images.map((image) => {
       const ext = '.png';
       const filename =
-        '/assets/images/' + this.projectData.slug + '-0' + image.id;
+        `${prefix}/assets/images/` + this.projectData.slug + '-0' + image.id;
 
       const smallUrl = filename + '-tn' + ext;
       const bigUrl = filename + ext;
