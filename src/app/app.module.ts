@@ -1,17 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MaterialModule } from './material.module'
-import { FlexLayoutModule } from '@angular/flex-layout'
-import { HttpClientModule } from '@angular/common/http'
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ProjectComponent} from './project/project.component';
-import { ProjectImageComponent, } from './project-image/project-image.component'
+import { ProjectComponent } from './project/project.component';
+import { ProjectImageComponent } from './project-image/project-image.component';
 
-import { ImageDialogComponent } from './image-dialog/image-dialog.component'
+import { ImageDialogComponent } from './image-dialog/image-dialog.component';
 
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { ProjectService } from './services/project.service';
@@ -22,7 +22,7 @@ import { ProjectService } from './services/project.service';
     HeaderComponent,
     ProjectComponent,
     ImageDialogComponent,
-    ProjectImageComponent
+    ProjectImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,17 +30,12 @@ import { ProjectService } from './services/project.service';
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
-  entryComponents: [
-    ImageDialogComponent
-  ],
-  providers: [
-    InMemoryDataService,
-    ProjectService
-  ],
-  bootstrap: [AppComponent]
+  entryComponents: [ImageDialogComponent],
+  providers: [InMemoryDataService, ProjectService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

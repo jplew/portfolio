@@ -1,30 +1,25 @@
-import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { AfterViewChecked } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ProjectImage, Project } from '../typings';
 import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
 
 @Component({
   selector: 'app-project-image',
   templateUrl: './project-image.component.html',
-  styles: []
+  styles: [],
 })
 export class ProjectImageComponent implements OnInit {
+  @Input() imageData: ProjectImage;
+  @Input() projectData: Project;
 
-  @Input() imageData: ProjectImage
-  @Input() projectData: Project
+  imageUrl: string;
+  imageCaption: string;
 
-  imageUrl: string
-  imageCaption: string
-
-  constructor(
-    public dialog: MatDialog
-  ) {
-  }
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.imageUrl = this.imageData.smallUrl
-    this.imageCaption = this.imageData.caption
+    this.imageUrl = this.imageData.smallUrl;
+    this.imageCaption = this.imageData.caption;
   }
 
   getConfig() {
@@ -35,15 +30,13 @@ export class ProjectImageComponent implements OnInit {
         imageHeight: window.innerHeight - 250 + 'px',
       },
       height: window.innerHeight - 80 + 'px',
-    }
-    return config
+    };
+    return config;
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(ImageDialogComponent, this.getConfig())
+    const dialogRef = this.dialog.open(ImageDialogComponent, this.getConfig());
 
-    dialogRef.afterClosed().subscribe(result => {
-    })
+    dialogRef.afterClosed().subscribe((result) => {});
   }
-
 }

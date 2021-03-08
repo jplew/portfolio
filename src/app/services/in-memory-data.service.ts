@@ -4,105 +4,140 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const projects = [
       {
-        id: 1,
-        slug: 'intellitrucks',
-        title: 'Intellitrucks.com',
-        url: '<div class="muted">internal site</div>',
+        id: 11,
+        slug: 'crud',
+        title: 'MongoDB CRUD App',
+        url:
+          '<a href="https://mongodb-angular-app.web.app" target="_blank">https://mongodb-angular-app.web.app</a>',
         skills: [
-          'PHP',
-          'Laravel',
-          'MySQL',
-          'Javascript'
+          'Angular',
+          'Angular Material',
+          'MongoDB',
+          'Mongoose',
+          'Express',
         ],
         images: [
           {
             id: 1,
-            caption: 'Intellitrucks > Custom CMS creation'
+            caption: 'MongoDB CRUD App > List view',
           },
           {
             id: 2,
-            caption: 'Intellitrucks > Using DataTables in fleet manager dashboard'
+            caption: 'MongoDB CRUD App > Create view',
+          },
+        ],
+        blurb:
+          'Sample client/server app pair demonstrating basic CRUD operations on a MongoDB. Frontend is an Angular SPA, backend is a an Express server powered by Mongoose. Hosted on Firebase. Github links to source code available in the app header.',
+        bullets: [
+          'Uses RxJS 6 pipeable operators',
+          'Layout with Angular Flex-Layout and Material',
+          'Can filter results via search box or drop-down menu',
+          'Results are sortable alphabetically by name',
+          'PUT and POST requests update the listing dynamically in real-time',
+          'Uses extensive client-side form validation',
+          'API uses Mongoose as ORM',
+        ],
+      },
+      {
+        id: 10,
+        slug: 'rtadubai',
+        title: 'RTA Dubai Traffic Dashboard Visualization',
+        url:
+          '<a href="https://rta-dubai-1900a.web.app" target="_blank">https://rta-dubai-1900a.web.app</a>',
+        skills: [
+          'Angular',
+          'Angular Material',
+          'ArcGIS',
+          'D3.js',
+          'Typescript',
+        ],
+        images: [
+          {
+            id: 1,
+            caption: 'RTA Dubai > Heatmap bubble view',
+          },
+          {
+            id: 2,
+            caption: 'RTA Dubai > Arc travel map view',
           },
           {
             id: 3,
-            caption: 'Intellitrucks > Plotting JSON data as a stepline graph using amcharts.js'
+            caption: 'RTA Dubai > Tabular analytics view',
           },
           {
             id: 4,
-            caption: 'Intellitrucks > Log data output in compliance with federal regulations'
+            caption: 'RTA Dubai > Congestion spot overlay window',
           },
         ],
-        blurb: 'Web app meant to help truck fleet owners manage their trucks, drivers, and jobs.',
+        blurb:
+          'Traffic visualization app to help the Road Transport Authority (RTA) of Dubai identify top road traffic bottlenecks based on GPS Probe data. ',
+        bullets: [
+          'Uses the ArcGIS maps API to represent traffic data as either heatmap network or arc-based node-link diagram',
+          'Shows congested road segments in both tabular and map-based formats',
+          'Histograph allows animated playback of data, and permits granular analysis by half-hour intervals',
+          'Uses D3.js for charts',
+        ],
+      },
+      {
+        id: 1,
+        slug: 'intellitrucks',
+        title: 'Intellitrucks.com',
+        url: '<div class="muted">internal site</div>',
+        skills: ['PHP', 'Laravel', 'MySQL', 'Javascript'],
+        images: [
+          {
+            id: 1,
+            caption: 'Intellitrucks > Custom CMS creation',
+          },
+          {
+            id: 2,
+            caption:
+              'Intellitrucks > Using DataTables in fleet manager dashboard',
+          },
+          {
+            id: 3,
+            caption:
+              'Intellitrucks > Plotting JSON data as a stepline graph using amcharts.js',
+          },
+          {
+            id: 4,
+            caption:
+              'Intellitrucks > Log data output in compliance with federal regulations',
+          },
+        ],
+        blurb:
+          'Web app meant to help truck fleet owners manage their trucks, drivers, and jobs.',
         bullets: [
           'Wrote specifications document based on US Department of Transportation Federal Motor Carrier regulations on Electronic Logging Devices',
           'Based on this doc, designed MySQL database structure in MySQLWorkbench',
           'Built models, controllers, and views for app, and designed custom CMS in Laravel 5',
           'Programmed REST API endpoints to feed JSON data to Datatables.net and amcharts.js libraries',
-          'Integrated app with Google Maps Timezone and Geocoding APIs'
-        ]
+          'Integrated app with Google Maps Timezone and Geocoding APIs',
+        ],
       },
       {
         id: 2,
-        slug: 'superghost',
-        title: 'SuperGhost',
-        url: '<a href="http://superghost.herokuapp.com" target="_blank">http://superghost.herokuapp.com</a>',
-        skills: [
-          'Javascript',
-          'Angular 5',
-          'Express',
-          'Node.js'
-        ],
-        images: [
-          {
-            id: 1,
-            caption: 'SuperGhost > Match wits against the computer, or challenge a friend'
-          },
-          {
-            id: 2,
-            caption: 'SuperGhost > Victory modal'
-          },
-          {
-            id: 3,
-            caption: 'SuperGhost > Built-in Oxford Dictionary API lookup to define words'
-          },
-          {
-            id: 4,
-            caption: 'SuperGhost > Instructions modal'
-          }
-        ],
-        blurb: 'Single and multi-player word-game programmed from scratch as a progressive web app.',
-        bullets: [
-          'Programmed Javascript AI capable of finding difficult English words',
-          'Built front-end in Angular 5 using Angular Material components and Reactive forms',
-          'Built backend using in-memory-API for word bank, and Oxford Dictionary API for word definitions and inflections',
-          'Wrote bot to scrape Oxford API for complete list of definable English words,resulting in custom array of over 160,000 words'
-        ]
-      },
-      {
-        id: 3,
         slug: 'idc',
         title: 'IDC Energy',
-        url: '<a href="https://jplew.github.io/idc" target="_blank">https://jplew.github.io/idc</a>',
-        skills: [
-          'Javascript',
-          'Angular 4'
-        ],
+        url:
+          '<a href="https://jplew.github.io/idc" target="_blank">https://jplew.github.io/idc</a>',
+        skills: ['Javascript', 'Angular 4'],
         images: [
           {
             id: 1,
-            caption: 'IDC > Map Overview'
+            caption: 'IDC > Map Overview',
           },
           {
             id: 2,
-            caption: 'IDC > Map Detail Sidenav flyout'
+            caption: 'IDC > Map Detail Sidenav flyout',
           },
           {
             id: 3,
-            caption: 'IDC > Enhanced Search Results'
+            caption: 'IDC > Enhanced Search Results',
           },
           {
             id: 4,
-            caption: 'IDC > List View using Angular Material Data-table'
+            caption: 'IDC > List View using Angular Material Data-table',
           },
         ],
         blurb: 'Plant-monitoring app UI Prototype for global energy company',
@@ -110,106 +145,60 @@ export class InMemoryDataService implements InMemoryDbService {
           'Developed a workable dashboard prototype, in both list and map views, based on static mockups',
           'Created map interface by integrating with Google Maps API',
           'Used DataTable component in Angular Material to produce plant list view',
-          'Offered enhanced inline Search functionality using in-memory API'
-        ]
+          'Offered enhanced inline Search functionality using in-memory API',
+        ],
       },
       {
-        id: 4,
+        id: 3,
         slug: 'calculator',
         title: 'Distance Calculator',
-        url: '<a href="https://node-distance-calculator.herokuapp.com" target="_blank">https://node-distance-calculator.herokuapp.com</a> <span class="divider">|</span> <a href="http://bit.ly/2mvXwLd" target="_blank">View Gist</a>',
-        skills: [
-          'Node.js',
-          'Javascript'
-        ],
+        url:
+          '<a href="https://node-distance-calculator.herokuapp.com" target="_blank">https://node-distance-calculator.herokuapp.com</a> <span class="divider">|</span> <a href="http://bit.ly/2mvXwLd" target="_blank">View Gist</a>',
+        skills: ['Node.js', 'Javascript'],
         images: [
           {
             id: 1,
-            caption: 'Listing of locations within 100km radius of coordinates'
+            caption: 'Listing of locations within 100km radius of coordinates',
           },
           {
             id: 2,
-            caption: 'Listing of locations within 100km radius of coordinates'
-          }
+            caption: 'Listing of locations within 100km radius of coordinates',
+          },
         ],
-        blurb: 'Vanilla Node.js app which parses geographical locations and calculates their distance from a particular point.',
+        blurb:
+          'Vanilla Node.js app which parses geographical locations and calculates their distance from a particular point.',
         bullets: [
           'Wrote a Node.js/JavaScript program that reads json and outputs a sorted list of names and addresses.',
           'Coded without recourse to any 3rd-party libraries or frameworks',
           'Wrote function to calculate distance between two points using the Haversine formula',
-        ]
+        ],
       },
       {
-        id: 5,
+        id: 4,
         slug: 'syncdb',
         title: 'SyncDB',
-        url: '<a href="https://github.com/jplew/SyncDB" target="_blank">https://github.com/jplew/SyncDB</a>',
-        skills: [
-          'Shell',
-          'Bash',
-          'Unix'
-        ],
+        url:
+          '<a href="https://github.com/jplew/SyncDB" target="_blank">https://github.com/jplew/SyncDB</a>',
+        skills: ['Shell', 'Bash', 'Unix'],
         images: [
           {
             id: 1,
-            caption: 'SyncDB > Script in action. Pushing to remote server.'
+            caption: 'SyncDB > Script in action. Pushing to remote server.',
           },
           {
             id: 2,
-            caption: 'SyncDB > Bash scripting nuts and bolts.'
-          }
+            caption: 'SyncDB > Bash scripting nuts and bolts.',
+          },
         ],
-        blurb: 'Open-source bash script I created as a service to the Wordpress developer community.',
+        blurb:
+          'Open-source bash script I created as a service to the Wordpress developer community.',
         bullets: [
           'Fully automates MySQL database migration for Wordpress sites from the command-line.',
           'Also handles routine tasks like backing up your database, syncing uploads directories, and keeping itself up-to-date.',
           'Refined script over time based on community feedback, and accepted pull requests',
-          'Starred over 180 times on Github.',
-        ]
+          'Starred over 220 times on Github.',
+        ],
       },
-      {
-        id: 6,
-        slug: 'kriyate',
-        title: 'Kriyate.co',
-        url: '<a href="https://www.kriyate.co" target="_blank">https://www.kriyate.co</a>',
-        skills: [
-          'PHP',
-          'MySQL',
-          'Wordpress',
-          'UI/UX design'
-        ],
-        images: [
-          {
-            id: 1,
-            caption: 'Kriyate > Personal site homepage'
-          },
-          {
-            id: 2,
-            caption: 'Kriyate > Share Your Care website homepage'
-          },
-          {
-            id: 3,
-            caption: 'Kriyate > Share Your Care website'
-          },
-          {
-            id: 4,
-            caption: 'Kriyate > TheDarkKnightManual.com site created for Insight Editions.'
-          },
-          {
-            id: 5,
-            caption: 'Kriyate > Previous website projects'
-          },
-          {
-            id: 6,
-            caption: 'Kriyate > Art portfolio website'
-          }
-        ],
-        blurb: 'My personal Wordpress portfolio, showcasing previous design and photography work.',
-        bullets: [
-          'Created numerous Wordpress sites over the years, regularly necessitating custom PHP coding and scripting.',
-          'Extensive experience designing and implementing user interfaces'
-        ]
-      }
     ];
     return { projects };
   }
