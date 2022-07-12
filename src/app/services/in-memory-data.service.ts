@@ -3,6 +3,47 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const projects = [
+{
+        id: 12,
+        slug: 'greenflower',
+        title: 'GreenFlower website',
+        url:
+          '<a href="https://lxp-cbgflower.vercel.app" rel="noopener noreferrer" target="_blank">https://lxp-cbgflower.vercel.app</a>',
+        skills: [
+          'React/Next.js',
+          'Tailwind CSS',
+          'Sanity CMS',
+          'AWS Cognito',
+          'DynamoDB',
+        ],
+        images: [
+          {
+            id: 1,
+            caption: 'Green Flower > Homepage',
+          },
+          {
+            id: 2,
+            caption: 'Green Flower > LMS Video Player',
+          },
+          {
+            id: 3,
+            caption: 'Green Flower > Compliance page',
+          },
+          {
+            id: 4,
+            caption: 'Green Flower > Course selection',
+          },
+        ],
+        blurb:
+          'Frontend for top cannabis education company site Green Flower (green-flower.com). This iteration of the site was built from scratch based on Adobe XD mockups and stylesheets, using an extensible React component library.',
+        bullets: [
+          'performance enhanced by mix of SSR and static pages using NextJS incremental static regeneration',
+          'all marketing copy stored in Sanity CMS for ease of editing by non-technical staff',
+          'integration with Hubspot Forms API',
+          'simple content animations using Framer Motion',
+          'full-featured video player for course previews',
+        ],
+      },
       {
         id: 11,
         slug: 'crud',
@@ -27,15 +68,14 @@ export class InMemoryDataService implements InMemoryDbService {
           },
         ],
         blurb:
-          'Sample client/server app pair demonstrating basic CRUD operations on a MongoDB. Frontend is an Angular SPA, backend is a an Express server powered by Mongoose. Hosted on Firebase. Github links to source code available in the app header.',
+          'Sample client/server app simulating an admin dashboard and showcasing CRUD operations on a MongoDB. Frontend is an Angular SPA, backend is a an Express server powered by Mongoose. Hosted on Firebase. Github links to source code available in the app header.',
         bullets: [
           'Uses RxJS 6 pipeable operators',
           'Layout with Angular Flex-Layout and Material',
           'Can filter results via search box or drop-down menu',
-          'Results are sortable alphabetically by name',
+          'Can sort results alphabetically',
           'PUT and POST requests update the listing dynamically in real-time',
-          'Uses extensive client-side form validation',
-          'API uses Mongoose as ORM',
+          'Data integrity ensured by both client-side form validation and server-side validation via Mongoose schema',
         ],
       },
       {
@@ -150,31 +190,6 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 3,
-        slug: 'calculator',
-        title: 'Distance Calculator',
-        url:
-          '<a href="https://node-distance-calculator.herokuapp.com" target="_blank">https://node-distance-calculator.herokuapp.com</a> <span class="divider">|</span> <a href="http://bit.ly/2mvXwLd" target="_blank">View Gist</a>',
-        skills: ['Node.js', 'Javascript'],
-        images: [
-          {
-            id: 1,
-            caption: 'Listing of locations within 100km radius of coordinates',
-          },
-          {
-            id: 2,
-            caption: 'Listing of locations within 100km radius of coordinates',
-          },
-        ],
-        blurb:
-          'Vanilla Node.js app which parses geographical locations and calculates their distance from a particular point.',
-        bullets: [
-          'Wrote a Node.js/JavaScript program that reads json and outputs a sorted list of names and addresses.',
-          'Coded without recourse to any 3rd-party libraries or frameworks',
-          'Wrote function to calculate distance between two points using the Haversine formula',
-        ],
-      },
-      {
-        id: 4,
         slug: 'syncdb',
         title: 'SyncDB',
         url:
@@ -191,7 +206,7 @@ export class InMemoryDataService implements InMemoryDbService {
           },
         ],
         blurb:
-          'Open-source bash script I created as a service to the Wordpress developer community.',
+          'Open-source bash script with 230 stars on Github. Created as a service to the Wordpress developer community to streamline production deployments.',
         bullets: [
           'Fully automates MySQL database migration for Wordpress sites from the command-line.',
           'Also handles routine tasks like backing up your database, syncing uploads directories, and keeping itself up-to-date.',
@@ -199,6 +214,27 @@ export class InMemoryDataService implements InMemoryDbService {
           'Starred over 220 times on Github.',
         ],
       },
+      {
+        id: 4,
+        slug: 'nextkeycloak',
+        title: 'Next Keycloak',
+        url:
+          '<a href="https://github.com/jplew/next-keycloak" target="_blank" rel="noopener noreferrer">https://github.com/jplew/next-keycloak</a>',
+        skills: ['Typescript', 'Next.js', 'SSR', 'Keycloak'],
+        images: [
+          {
+            id: 1,
+            caption: 'Next-Keycloak > Logged in state',
+          }
+        ],
+        blurb:
+          'Open-source app illustrating OAuth 2.0 authentication and authorization with Next.js and open-source identity and access management library, Keycloak. Integrations already existed between React SPAs (create-react-app) and Keycloak via the react-keycloak package, but my library was the first to solve the challenge of server-side rendering for the Keycloak community.',
+        bullets: [
+          'work in my repo served as the basis for the @react-keycloak/ssr package',
+          'writes auth token to cookies in order to persist state and trigger logged-in views on the server'
+        ],
+      },
+      
     ];
     return { projects };
   }
