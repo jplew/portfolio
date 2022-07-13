@@ -2,10 +2,10 @@
   "name": "resume",
   "version": "0.0.0",
   "scripts": {
-    "deploy": "NODE_OPTIONS=--openssl-legacy-provider npx ng deploy --base-href=/resume/",
+    "deploy": "NODE_OPTIONS=--openssl-legacy-provider npx ng deploy --base-href=/portfolio/",
     "start": "NODE_OPTIONS=--openssl-legacy-provider ng serve",
     "build": "NODE_OPTIONS=--openssl-legacy-provider ng build",
-    "build.prod": "NODE_OPTIONS=--openssl-legacy-provider ng build --configuration production --base-href 'https://jplew.github.io/resume/'",
+    "build.prod": "NODE_OPTIONS=--openssl-legacy-provider ng build --configuration production --base-href 'https://jplew.github.io/portfolio/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

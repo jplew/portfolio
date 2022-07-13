@@ -34,12 +34,12 @@ export class InMemoryDataService implements InMemoryDbService {
           },
         ],
         blurb:
-          'Frontend for cannabis education company site Green Flower (green-flower.com). This iteration of the site was built from scratch based on Adobe XD mockups and style guides, using a custom React component library.',
+          'The Frontend for cannabis education company Green Flower (green-flower.com). This iteration of the site was built from scratch based on Adobe XD mockups and style guides, using our own React component library.',
         bullets: [
           'performance enhanced by mix of SSR and static pages using NextJS incremental static regeneration',
           'all marketing copy stored in Sanity CMS for ease of editing by non-technical staff',
           'integration with Hubspot Forms API',
-          'simple content animations using Framer Motion',
+          'simple animations using Framer Motion',
           'full-featured video player for course previews',
         ],
       },
@@ -47,34 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 12,
         slug: 'nftmarket',
         title: 'Sample NFT Marketplace',
-        url: '<a href="https://nftmarket-zeta.vercel.app" rel="noopener noreferrer" target="_blank""https://mongodb-angular-app.web.app" target="_blank">https://nftmarket-zeta.vercel.app</a>',
-        skills: ['React/Next.js', 'Tailwind CSS', 'Ethers.js', 'Moralis'],
-        images: [
-          {
-            id: 1,
-            caption: 'NFT Market > Homepage',
-          },
-          {
-            id: 2,
-            caption: 'NFT Market > NFT view',
-          },
-          {
-            id: 3,
-            caption: 'NFT Market > Collection view',
-          },
-        ],
-        blurb:
-          'Basic NFT marketplace frontend developed over two days as a personal challenge. Users can browse any Ethereum NFT collection and view the NFT holdings of any Ethereum wallet.',
-        bullets: [
-          'Uses Moralis SDK (moralis.io) to fetch NFT data.',
-          'Uses web3-react for wallet connect functionality',
-        ],
-      },
-      {
-        id: 11,
-        slug: 'crud',
-        title: 'MongoDB CRUD App',
-        url: '<a href="https://mongodb-angular-app.web.app" target="_blank">https://mongodb-angular-app.web.app</a>',
+        url: '<a href="https://nftmarket-zeta.vercel.app" rel="noopener noreferrer" target="_blank""https://mongodb-angular-app.web.app" target="_blank">https://mongodb-angular-app.web.app</a>',
         skills: [
           'Angular',
           'Angular Material',
@@ -93,9 +66,9 @@ export class InMemoryDataService implements InMemoryDbService {
           },
         ],
         blurb:
-          'Sample client/server app simulating an admin dashboard and showcasing CRUD operations on a MongoDB. Frontend is an Angular SPA, backend is a an Express server powered by Mongoose. Hosted on Firebase. Github links to source code available in the app header.',
+          'Basic NFT marketplace frontend developed over three days as a personal challenge. Users can view any Ethereum NFT collection, as well as view the NFT holdings of any Ethereum wallet.',
         bullets: [
-          'Uses RxJS 6 pipeable operators',
+          'Uses Moralis SDK (moralis.io) to fetch NFT data.',
           'Layout with Angular Flex-Layout and Material',
           'Can filter results via search box or drop-down menu',
           'Can sort results alphabetically',

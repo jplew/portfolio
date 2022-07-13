@@ -22,7 +22,7 @@ export class ProjectComponent implements OnInit {
     }
 
     const prefix = environment.production
-      ? 'https://jplew.github.io/resume'
+      ? 'https://jplew.github.io/portfolio'
       : '';
 
     this.projectData.images = this.projectData.images.map((image) => {
