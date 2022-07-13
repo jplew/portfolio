@@ -1,6 +1,6 @@
 {
-  "name": "resume",
-  "version": "0.0.0",
+  "name": "portfolio",
+  "version": "0.1.0",
   "scripts": {
     "deploy": "NODE_OPTIONS=--openssl-legacy-provider npx ng deploy --base-href=/portfolio/",
     "start": "NODE_OPTIONS=--openssl-legacy-provider ng serve",
