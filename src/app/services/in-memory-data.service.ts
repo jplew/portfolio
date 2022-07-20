@@ -47,7 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 12,
         slug: 'nftmarket',
         title: 'Sample NFT Marketplace',
-        url: '<a href="https://nftmarket-zeta.vercel.app" rel="noopener noreferrer" target="_blank""https://mongodb-angular-app.web.app" target="_blank">https://nftmarket-zeta.vercel.app</a>',
+        url: '<a href="https://nftmarket-zeta.vercel.app" rel="noopener noreferrer" target="_blank">https://nftmarket-zeta.vercel.app</a> | <a href="https://github.com/jplew/nftmarket" rel="noopener noreferrer" target="_blank">Github repo</a>',
         skills: ['React/Next.js', 'Tailwind CSS', 'Ethers.js', 'Moralis'],
         images: [
           {
@@ -74,7 +74,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 11,
         slug: 'crud',
         title: 'MongoDB CRUD App',
-        url: '<a href="https://mongodb-angular-app.web.app" target="_blank">https://mongodb-angular-app.web.app</a>',
+        url: '<a href="https://mongodb-angular-app.web.app" target="_blank">https://mongodb-angular-app.web.app</a> | <a href="https://github.com/jplew/mongodb-firebase-api" rel="noopener noreferrer" target="_blank">Github repo</a>',
         skills: [
           'Angular',
           'Angular Material',
